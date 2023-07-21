@@ -1,4 +1,5 @@
 export interface Post {
+    _id: string
     title: string
     message: string
     creator: string
