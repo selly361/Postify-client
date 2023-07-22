@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -38,6 +38,7 @@ body > div {
 }
 
 
+
 input,
 fieldset,
 button {
@@ -50,7 +51,24 @@ button {
     cursor: pointer;
 }
 
+input {
+    height: 48px;
+    width: 100%;
 
-`
+    border-radius: 8px;
+    background: #FFF;
+    border: 1px solid #D9D9D9;
+    padding: 12px 16px;
 
-export { GlobalStyle }
+    transition: .5s ease border box-shadow;
+
+    &:focus {
+        border: 1px solid #633CFF;
+        box-shadow: 0px 0px 32px 0px rgba(99, 60, 255, 0.25);
+    }
+}
+
+
+`;
+
+export { GlobalStyle };
