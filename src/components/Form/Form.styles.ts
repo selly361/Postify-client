@@ -10,6 +10,10 @@ export const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
     gap: 12px;
+
+    button {
+        margin: auto;
+    }
 `
 
 export const Title = styled.h2`
