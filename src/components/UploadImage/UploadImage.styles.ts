@@ -5,13 +5,15 @@ export const UploadImageContainer = styled.div`
   height: 193px;
   position: relative;
 
-  input {
-    width: 100%;
-    height: 100%;
+  & input {
+    width: 193px;
+    height: 193px;
     opacity: 0;
-    position: relative;
+    position: absolute;
     z-index: 10;
     cursor: pointer;
+    inset: 0;
+    margin: auto;
   }
 `;
 
@@ -28,6 +30,7 @@ export const StyledImage = styled.div<{ image: string }>`
   inset: 0;
   margin: auto;
   cursor: pointer;
+  background-position: center;
 
   path {
     fill: ${props => props.image ? 'white' : ''};
