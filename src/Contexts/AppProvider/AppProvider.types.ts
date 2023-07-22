@@ -1,19 +1,20 @@
-import { INewPost, Post } from "features/posts/posts.types";
+import { INewPost, Post } from "features/posts/posts.types"
 
-import { ReactNode } from "react";
+import { ReactNode } from "react"
 
 interface IAppContext {
-  editing: boolean;
-  formData: INewPost | Post;
-  setFormData: React.Dispatch<React.SetStateAction<INewPost | Post>>;
-  handleEditPost: (postToEdit: Post) => void;
-  handleFinishEdit: () => void;
-  handleSubmit: () => void;
+  editing: boolean
+  formData: INewPost | Post
+  setFormData: React.Dispatch<React.SetStateAction<INewPost | Post>>
+  handleEditPost: (postToEdit: Post) => void
+  handleFinishEdit: () => void
+  handleSubmit: () => void
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 
 interface IProps {
-    children: ReactNode;
+    children: ReactNode
   }
 
 export type { IAppContext, IProps }
