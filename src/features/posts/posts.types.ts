@@ -1,13 +1,18 @@
-export interface Post {
-    _id: string
+export interface INewPost {
     title: string
     message: string
     creator: string
     tags: string[]
     selectedFile: string
-    likes: number
-    createdAt: Date
 }
+
+export interface Post extends INewPost {
+    _id: string
+    createdAt: Date
+    likes: number
+}
+
+
 
 export interface PostsState {
     posts: Post[]
