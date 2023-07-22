@@ -1,7 +1,8 @@
 import { Post } from "./posts.types"
 import axios from "axios"
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3001/posts"
+const API_BASE_URL = (process.env.REACT_APP_API_BASE_URL as string)
+
 
 export const fetchPosts = async () => {
     
