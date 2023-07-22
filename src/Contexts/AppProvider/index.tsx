@@ -17,7 +17,8 @@ const AppContext = createContext<IAppContext>({
   setFormData: () => {},
   handleEditPost: () => {},
   handleFinishEdit: () => {},
-  handleSubmit: () => {}
+  handleSubmit: () => {},
+  handleInputChange: () => {}
 })
 
 export function useAppContext() {
@@ -70,6 +71,14 @@ function AppContextProvider({ children }: IProps) {
     }
   }
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value
+    }))
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -79,6 +88,7 @@ function AppContextProvider({ children }: IProps) {
         handleEditPost,
         handleFinishEdit,
         handleSubmit,
+        handleInputChange
       }}
     >
       {children}
