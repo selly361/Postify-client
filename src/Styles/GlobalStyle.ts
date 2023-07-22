@@ -16,17 +16,26 @@ html {
     font-family: 'Instrument Sans', sans-serif;
 }
 
-body {
+body  {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #fafafa;
+    overflow-x: hidden;
+
+}
+
+
+body > div {
     width: 100vw;
     min-height: 100vh;
     background-color: #fafafa;
     padding: 24px;
+    overflow-x: hidden;
 
     display: grid;
     gap: 24px;
     place-items: center;
 }
-
 
 
 input,
