@@ -28,7 +28,7 @@ body  {
 body > div {
     width: 100vw;
     min-height: 100vh;
-    background-color: #fafafa;
+    background-color: #171823;
     padding: 24px;
     overflow-x: hidden;
 
@@ -52,7 +52,7 @@ button {
 }
 
 input {
-    height: 48px;
+    height: 40px;
     width: 100%;
 
     border-radius: 8px;
