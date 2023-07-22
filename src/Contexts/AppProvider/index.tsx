@@ -37,6 +37,9 @@ function AppContextProvider({ children }: IProps) {
     selectedFile: ""
   })
 
+  const dispatch = useAppDispatch()
+
+
   const handleEditPost = (postToEdit: Post) => {
     setEditing(true)
     setFormData(postToEdit)
@@ -54,7 +57,6 @@ function AppContextProvider({ children }: IProps) {
   }
 
   const handleSubmit = () => {
-    const dispatch = useAppDispatch()
 
     if (editing) {
       const post = formData as Post
