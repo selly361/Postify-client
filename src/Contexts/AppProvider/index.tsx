@@ -26,7 +26,7 @@ export function useAppContext() {
 
 
 
-export function AppContextProvider({ children }: IProps) {
+function AppContextProvider({ children }: IProps) {
   const [editing, setEditing] = useState(false)
 
   const [formData, setFormData] = useState<INewPost | Post>({
@@ -83,3 +83,5 @@ export function AppContextProvider({ children }: IProps) {
     </AppContext.Provider>
   )
 }
+
+export default AppContextProvider
