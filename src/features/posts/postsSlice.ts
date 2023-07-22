@@ -1,6 +1,6 @@
 import * as postsApi from "./postsApi"
 
-import { Post, PostsState } from "./posts.types"
+import { INewPost, Post, PostsState } from "./posts.types"
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 const initialState: PostsState = {
@@ -23,7 +23,7 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
 
 })
 
-export const createPost = createAsyncThunk('posts/createPost', async (post: Post) => {
+export const createPost = createAsyncThunk('posts/createPost', async (post: INewPost) => {
     
   try {
     const newPost = await postsApi.createPost(post)
