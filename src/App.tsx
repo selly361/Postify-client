@@ -1,8 +1,18 @@
-import React from 'react'
+import { Header, Main } from 'Layout'
+
+import { Fragment } from 'react'
+import { fetchPosts } from 'features/posts/postsSlice'
+import { useAppDispatch } from 'app/hooks'
 
 function App() {
+
+
+
   return (
-    null
+    <Fragment>
+      <Header />
+      <Main />
+    </Fragment>
   )
 }
 
