@@ -1,16 +1,17 @@
-import { Post } from "./posts.types"
+import { INewPost, Post } from "./posts.types"
+
 import axios from "axios"
 
 const API_BASE_URL = (process.env.REACT_APP_API_BASE_URL as string)
 
 
-export const fetchPosts = async () => {
+export const fetchPosts = async (): Promise<Post[]> => {
     
   try {
     
     const { data: posts } = await axios.get(API_BASE_URL)
     
-    return posts
+    return (posts)
     
   } 
   
@@ -20,7 +21,7 @@ export const fetchPosts = async () => {
   
 }
 
-export const createPost = async (post: Post) => {
+export const createPost = async (post: INewPost): Promise<Post> => {
     
   try {
     
@@ -35,7 +36,7 @@ export const createPost = async (post: Post) => {
   }
 }
 
-export const updatePost = async (postId: string, post: Post) => {
+export const updatePost = async (postId: string, post: Post): Promise<Post> => {
     
   try {
     
@@ -51,7 +52,7 @@ export const updatePost = async (postId: string, post: Post) => {
   
 }
 
-export const likePost = async (postId: string) => {
+export const likePost = async (postId: string): Promise<Post> => {
     
     try {
         
