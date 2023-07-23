@@ -2,11 +2,10 @@ import { Typography } from "Styles";
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
-  width: calc(100vw - 48px);
+  width: 100vw;
   height: 78px;
-  padding: 16px 24px;
+  padding: 16px 72px;
 
-  border-radius: 12px;
   background: #fff;
 
   display: flex;

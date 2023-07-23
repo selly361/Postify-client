@@ -28,11 +28,11 @@ body  {
 body > div {
     width: 100vw;
     min-height: 100vh;
-    background-color: #171823;
-    padding: 24px;
+    background-color: grey;
     overflow-x: hidden;
 
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 24px;
     place-items: center;
 }
