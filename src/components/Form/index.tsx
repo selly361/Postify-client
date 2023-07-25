@@ -10,7 +10,9 @@ import {
 import { useAppContext } from "Contexts/AppProvider";
 
 function Form() {
-  const { editing, formData, setFormData, handleInputChange, handleSubmit } = useAppContext();
+  const { editing, formData, setFormData, handleInputChange, handleSubmit, handleFinishEdit } = useAppContext();
+
+  
 
   return (
     <StyledForm onSubmit={(e) => e.preventDefault()}>
@@ -47,13 +49,16 @@ function Form() {
         <StyledInput
           name="tags"
           value={formData.tags}
-          onChange={handleInputChange}
+          onChange={({ target }) => {
+            setFormData(e => ({...e, tags: target.value.replace(/\s+/g, '').split(",")}))
+          }}
         />
       </StyledFieldset>
       <UploadImage />
       <Button type="primary" onClick={handleSubmit}>
-        Create Post
+        {editing ? "Edit Post" : "Create Post"}
       </Button>
+      {editing ? <Button type="primary" onClick={handleFinishEdit}>Cancel Edit</Button> : null}
     </StyledForm>
   );
 }
