@@ -1,18 +1,16 @@
-import { Fragment, ReactNode } from 'react'
+import { Fragment, ReactNode } from "react";
 
-import AppProvider from 'Contexts/AppProvider'
-import TabProvider from 'Contexts/TabProvider'
+import AppProvider from "Contexts/AppProvider";
+import TabProvider from "Contexts/TabProvider";
 
 function Wrapper({ children }: { children: ReactNode }) {
   return (
     <Fragment>
-        <AppProvider>
-            <TabProvider>
-                {children}
-            </TabProvider>
-        </AppProvider>
+      <TabProvider>
+        <AppProvider>{children}</AppProvider>
+      </TabProvider>
     </Fragment>
-  )
+  );
 }
 
-export default Wrapper
+export default Wrapper;
