@@ -4,6 +4,7 @@ import { createContext, useContext, useState } from "react"
 import { createPost, updatePost } from "features/posts/postsSlice"
 
 import { useAppDispatch } from "app/hooks"
+import { useTabContext } from "Contexts/TabProvider"
 
 const AppContext = createContext<IAppContext>({
   editing: false,
@@ -41,7 +42,10 @@ function AppContextProvider({ children }: IProps) {
   const dispatch = useAppDispatch()
 
 
+  const { setTab } = useTabContext()
+
   const handleEditPost = (postToEdit: Post) => {
+    setTab("Edit Post")
     setEditing(true)
     setFormData(postToEdit)
   }
