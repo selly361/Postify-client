@@ -19,7 +19,7 @@ html {
 body  {
     width: 100vw;
     min-height: 100vh;
-    background-color: #fafafa;
+    background-color: #D9D9D9;
     overflow-x: hidden;
 
 }
